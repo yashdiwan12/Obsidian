@@ -121,6 +121,7 @@ graph TD
     E --> E1["📄 .env <br> Stores your secret API key"]
     E --> E2["📄 requirements.txt <br> Lists Python packages"]
     E --> E3["📄 README.md <br> Project documentation"]
+
 ##  Updating the Knowledge Base
 
 When you modify the `knowledge_base.txt` file, you need to rebuild the vector database for the changes to take effect.
