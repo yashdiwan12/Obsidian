@@ -1,137 +1,143 @@
-Obsidian
-=================================================
-
+# Obsidian
 Build awareness with tools to identify digital threats, spot scams, and stay safe online.
 
-Python 3.8+ | Flask 2.3.3
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Flask](https://img.shields.io/badge/Flask-2.3.3-green)
 
 Obsidian is an AI-powered security advisor born from personal experience with cybercrime. It provides practical tools to help individuals and families identify sophisticated digital threats through AI-powered analysis and educational resources.
 
+---
 
--------------------------------------------------
-Features
--------------------------------------------------
+## ✨ Features
 
-* Threat Query: Get instant answers to cybersecurity questions with AI-powered analysis.
-* Phishing Analyzer: Examine suspicious emails, messages, and websites for potential scams.
-* Educational Resources: Learn about common cyber threats with clear, practical guidance.
-* Community Protection: Share knowledge to create stronger defenses against cybercriminals.
+* **Threat Query**: Get instant answers to cybersecurity questions with AI-powered analysis.
+* **Phishing Analyzer**: Examine suspicious emails, messages, and websites for potential scams.
+* **Educational Resources**: Learn about common cyber threats with clear, practical guidance.
+* **Community Protection**: Share knowledge to create stronger defenses against cybercriminals.
 
--------------------------------------------------
-Quick Start
--------------------------------------------------
+---
 
-Prerequisites
+## 🚀 Quick Start
+
+### Prerequisites
+
 * Python 3.8 or higher
-* A Gemini API key from Google AI Studio
+* A Gemini API key from [Google AI Studio](https://aistudio.google.com/)
 
-Installation
-1. Clone the repository
-   git clone https://github.com/yashdiwan12/Obsidian
-   cd Obsidian
+### Installation
 
-2. Set up a virtual environment
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/yashdiwan12/Obsidian](https://github.com/yashdiwan12/Obsidian)
+    cd Obsidian
+    ```
 
-3. Install dependencies
-   pip install -r requirements.txt
+2.  **Set up a virtual environment**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use: venv\Scripts\activate
+    ```
 
-4. Configure environment variables
-   Create a .env file in the root directory and add your API key:
-   echo 'GEMINI_API_KEY="YOUR_API_KEY_HERE"' > .env
+3.  **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-5. Initialize the knowledge base
-   python rag_setup.py
+4.  **Configure environment variables**
+    Create a `.env` file in the root directory and add your API key. You can do this with a single command:
+    ```bash
+    echo 'GEMINI_API_KEY="YOUR_API_KEY_HERE"' > .env
+    ```
 
-6. Start the application
-   python app.py
+5.  **Initialize the knowledge base**
+    ```bash
+    python rag_setup.py
+    ```
 
-7. Open the frontend
-   Open index.html in your web browser, or serve it with a local server for best results:
-   python -m http.server 8000
-   
-   The backend will be running at http://127.0.0.1:5001 and the frontend at http://localhost:8000 (if using the HTTP server).
+6.  **Start the application**
+    ```bash
+    python app.py
+    ```
 
--------------------------------------------------
-Usage
--------------------------------------------------
+7.  **Open the frontend**
+    Open `index.html` in your web browser, or serve it with a local server for best results:
+    ```bash
+    python -m http.server 8000
+    ```
+    The backend will be running at `http://127.0.0.1:5001` and the frontend at `http://localhost:8000`.
 
-1. Ask Security Questions: Use the Threat Query tool to get answers to your cybersecurity questions.
-2. Analyze Suspicious Content: Submit potentially phishing emails, messages, or URLs to the Phishing Analyzer.
-3. Learn About Threats: Browse the educational content to improve your security awareness and knowledge.
+---
 
--------------------------------------------------
-Project Structure
--------------------------------------------------
+## 📖 Usage
+
+1.  **Ask Security Questions**: Use the **Threat Query** tool to get answers to your cybersecurity questions.
+2.  **Analyze Suspicious Content**: Submit potentially phishing emails, messages, or URLs to the **Phishing Analyzer**.
+3.  **Learn About Threats**: Browse the educational content to improve your security awareness and knowledge.
+
+---
+
+## 🏗️ Project Structure
 Obsidian
 │
-├── 🧠 **Backend Logic**
-│   ├── 📄 app.py               # Flask server that handles API requests.
-│   └── 📄 rag_setup.py          # Script to build the vector database from the knowledge base.
+├── 🧠 Backend Logic
+│   ├── 📄 app.py              # Flask server that handles API requests.
+│   └── 📄 rag_setup.py         # Script to build the vector database from the knowledge base.
 │
-├── 🌐 **Frontend Interface**
+├── 🌐 Frontend Interface
 │   ├── 📄 index.html           # The main landing page.
 │   ├── 📄 tools.html           # The central hub for all analysis tools.
-│   ├── 📄 threat-query.html    # Page for the Threat Query tool.
+│   ├── 📄 threat-query.html     # Page for the Threat Query tool.
 │   ├── 📄 phishing-analyzer.html# Page for the Phishing Analysis tool.
 │   ├── 📄 about.html           # The "About Us" and vision page.
-│   ├── 🎨 style.css             # All CSS for styling the website.
-│   └── ⚙️ script.js             # All client-side JavaScript for interactivity.
+│   ├── 🎨 style.css            # All CSS for styling the website.
+│   └── ⚙️ script.js            # All client-side JavaScript for interactivity.
 │
-├── 📚 **Knowledge & Data**
+├── 📚 Knowledge & Data
 │   ├── 📄 knowledge_base.txt   # The raw text data for the AI's knowledge.
-│   └── 🗂️ db/                   # The vector database (auto-generated by rag_setup.py).
+│   └── 🗂️ db/                  # The vector database (auto-generated by rag_setup.py).
 │
-├── 🛠️ **Configuration & Setup**
-│   ├── 📄 .env                  # Stores your secret API key.
+├── 🛠️ Configuration & Setup
+│   ├── 📄 .env                 # Stores your secret API key.
 │   ├── 📄 requirements.txt     # Lists all the necessary Python packages.
-│   └── 📄 README.md             # Project documentation (this file).
+│   └── 📄 README.md            # Project documentation (this file).
+---
+
+## 🔄 Updating the Knowledge Base
+
+When you modify the `knowledge_base.txt` file, you need to rebuild the vector database for the changes to take effect.
+
+1.  Stop the server (`Ctrl+C` in the terminal).
+2.  Delete the `db` folder.
+3.  Run the setup script again:
+    ```bash
+    python rag_setup.py
+    ```
+4.  Restart the server:
+    ```bash
+    python app.py
+    ```
+
+---
+
+## 🛠️ Troubleshooting
+
+| Issue                         | Solution                                                                         |
+| :---------------------------- | :------------------------------------------------------------------------------- |
+| "Could not connect to server" | Ensure `app.py` is running in your terminal.                                     |
+| API key errors                | Verify your `.env` file contains the correct and valid Gemini API key.             |
+| Knowledge not updating        | Remember to rebuild the database after changing `knowledge_base.txt` (see above). |
+| Import errors                 | Check that all dependencies are installed with `pip install -r requirements.txt`.  |
 
 
--------------------------------------------------
-Updating the Knowledge Base
--------------------------------------------------
+---
 
-When you modify the knowledge_base.txt file, you need to rebuild the vector database for the changes to take effect.
-
-1. Stop the server (Ctrl+C in the terminal).
-2. Delete the db folder.
-3. Run the setup script again:
-   python rag_setup.py
-4. Restart the server:
-   python app.py
-
--------------------------------------------------
-Troubleshooting
--------------------------------------------------
-
-Issue: "Could not connect to server"
-Solution: Ensure app.py is running in your terminal.
-
-Issue: API key errors
-Solution: Verify your .env file contains the correct and valid Gemini API key.
-
-Issue: Knowledge not updating
-Solution: Remember to rebuild the database after changing knowledge_base.txt (see above).
-
-Issue: Import errors
-Solution: Check that all dependencies are installed with `pip install -r requirements.txt`.
-
--------------------------------------------------
-Contributing
--------------------------------------------------
+## 🤝 Contributing
 
 We welcome contributions! Please feel free to submit pull requests, open issues, or suggest new features.
 
-1. Fork the Project.
-2. Create your Feature Branch (git checkout -b feature/AmazingFeature).
-3. Commit your Changes (git commit -m 'Add some AmazingFeature').
-4. Push to the Branch (git push origin feature/AmazingFeature).
-5. Open a Pull Request.
+1.  **Fork** the Project.
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the Branch (`git push origin feature/AmazingFeature`).
+5.  Open a **Pull Request**.
 
--------------------------------------------------
-License
--------------------------------------------------
-
-This project is distributed under the MIT License. See the LICENSE file for more information.
