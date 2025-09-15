@@ -76,6 +76,47 @@ Obsidian is an AI-powered security advisor born from personal experience with cy
 
 ---
 
+
+
+##  Updating the Knowledge Base
+
+When you modify the `knowledge_base.txt` file, you need to rebuild the vector database for the changes to take effect.
+
+1.  Stop the server (`Ctrl+C` in the terminal).
+2.  Delete the `db` folder.
+3.  Run the setup script again:
+    ```bash
+    python rag_setup.py
+    ```
+4.  Restart the server:
+    ```bash
+    python app.py
+    ```
+
+---
+
+## Troubleshooting
+
+| Issue                         | Solution                                                                         |
+| :---------------------------- | :------------------------------------------------------------------------------- |
+| "Could not connect to server" | Ensure `app.py` is running in your terminal.                                     |
+| API key errors                | Verify your `.env` file contains the correct and valid Gemini API key.             |
+| Knowledge not updating        | Remember to rebuild the database after changing `knowledge_base.txt` (see above). |
+| Import errors                 | Check that all dependencies are installed with `pip install -r requirements.txt`.  |
+
+
+---
+
+## Contributing
+
+We welcome contributions! Please feel free to submit pull requests, open issues, or suggest new features.
+
+1.  **Fork** the Project.
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the Branch (`git push origin feature/AmazingFeature`).
+5.  Open a **Pull Request**.
+
 ##  Project Structure
 ```mermaid
 graph TD
@@ -121,43 +162,3 @@ graph TD
     E --> E1["📄 .env <br> Stores your secret API key"]
     E --> E2["📄 requirements.txt <br> Lists Python packages"]
     E --> E3["📄 README.md <br> Project documentation"]
-
-##  Updating the Knowledge Base
-
-When you modify the `knowledge_base.txt` file, you need to rebuild the vector database for the changes to take effect.
-
-1.  Stop the server (`Ctrl+C` in the terminal).
-2.  Delete the `db` folder.
-3.  Run the setup script again:
-    ```bash
-    python rag_setup.py
-    ```
-4.  Restart the server:
-    ```bash
-    python app.py
-    ```
-
----
-
-## Troubleshooting
-
-| Issue                         | Solution                                                                         |
-| :---------------------------- | :------------------------------------------------------------------------------- |
-| "Could not connect to server" | Ensure `app.py` is running in your terminal.                                     |
-| API key errors                | Verify your `.env` file contains the correct and valid Gemini API key.             |
-| Knowledge not updating        | Remember to rebuild the database after changing `knowledge_base.txt` (see above). |
-| Import errors                 | Check that all dependencies are installed with `pip install -r requirements.txt`.  |
-
-
----
-
-## Contributing
-
-We welcome contributions! Please feel free to submit pull requests, open issues, or suggest new features.
-
-1.  **Fork** the Project.
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
-4.  Push to the Branch (`git push origin feature/AmazingFeature`).
-5.  Open a **Pull Request**.
-
