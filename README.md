@@ -3,7 +3,7 @@ Obsidian
 
 Build awareness with tools to identify digital threats, spot scams, and stay safe online.
 
-Python 3.8+ | Flask 2.3.3 | License: MIT
+Python 3.8+ | Flask 2.3.3
 
 Obsidian is an AI-powered security advisor born from personal experience with cybercrime. It provides practical tools to help individuals and families identify sophisticated digital threats through AI-powered analysis and educational resources.
 
