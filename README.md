@@ -8,8 +8,6 @@ Python 3.8+ | Flask 2.3.3 | License: MIT
 Obsidian is an AI-powered security advisor born from personal experience with cybercrime. It provides practical tools to help individuals and families identify sophisticated digital threats through AI-powered analysis and educational resources.
 
 
-https://via.placeholder.com/800x400?text=Obsidian+Security+Interface
-
 -------------------------------------------------
 Features
 -------------------------------------------------
