@@ -120,45 +120,40 @@ We welcome contributions! Please feel free to submit pull requests, open issues,
 ##  Project Structure
 ```mermaid
 graph TD
-    subgraph Obsidian Project
-        A(Obsidian)
+    subgraph "User's Browser"
+        A[🌐 Frontend <br>(HTML, CSS, JS)]
     end
 
-    subgraph Backend
-        B(🧠 Backend Logic)
+    subgraph "Backend Server (Python/Flask)"
+        B[🐍 Flask App <br>(app.py)]
+        C{API Endpoints}
+        D[Phishing Analyzer]
+        E[Threat Query <br>(RAG Chain)]
     end
 
-    subgraph Frontend
-        C(🌐 Frontend Interface)
+    subgraph "Data & AI Layer"
+        F[🧠 Google Gemini API]
+        G[💾 ChromaDB <br>(Vector Store)]
     end
 
-    subgraph Data
-        D(📚 Knowledge & Data)
+    subgraph "Setup Process (Offline)"
+        H[📄 knowledge_base.txt] --> I[⚙️ rag_setup.py]
+        I -- Creates/Updates --> G
     end
 
-    subgraph Config
-        E(🛠️ Configuration & Setup)
-    end
+    %% --- Connections ---
+    A -- API Request --> C
+    C --> D
+    C --> E
+    D -- Direct Prompt --> F
+    E -- Retrieves Context --> G
+    E -- Uses Context in Prompt --> F
+    F -- AI Response --> B
+    B -- JSON Response --> A
 
-    A --> B
-    A --> C
-    A --> D
-    A --> E
+    style A fill:#D6EAF8,stroke:#3498DB,stroke-width:2px
+    style B fill:#D5F5E3,stroke:#2ECC71,stroke-width:2px
+    style F fill:#FCF3CF,stroke:#F1C40F,stroke-width:2px
+    style G fill:#EBDEF0,stroke:#8E44AD,stroke-width:2px
+    style H fill:#FDEDEC,stroke:#E74C3C,stroke-width:2px
 
-    B --> B1["📄 app.py <br> Flask server for API requests"]
-    B --> B2["📄 rag_setup.py <br> Builds the vector database"]
-
-    C --> C1["📄 index.html <br> The main landing page"]
-    C --> C2["📄 tools.html <br> Central hub for all tools"]
-    C --> C3["📄 threat-query.html <br> Page for the Threat Query tool"]
-    C --> C4["📄 phishing-analyzer.html <br> Page for Phishing Analysis"]
-    C --> C5["📄 about.html <br> The 'About Us' page"]
-    C --> C6["🎨 style.css <br> All CSS for styling"]
-    C --> C7["⚙️ script.js <br> Client-side JavaScript"]
-
-    D --> D1["📄 knowledge_base.txt <br> Raw text data for the AI"]
-    D --> D2["🗂️ db/ <br> Auto-generated vector database"]
-
-    E --> E1["📄 .env <br> Stores your secret API key"]
-    E --> E2["📄 requirements.txt <br> Lists Python packages"]
-    E --> E3["📄 README.md <br> Project documentation"]
