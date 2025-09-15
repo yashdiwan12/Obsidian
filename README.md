@@ -151,15 +151,9 @@ graph TD
     F -- AI Response --> B
     B -- JSON Response --> A
 
-    style A fill:#D6EAF8,stroke:#3498DB,stroke-width:2px
-    style B fill:#D5F5E3,stroke:#2ECC71,stroke-width:2px
-    style F fill:#FCF3CF,stroke:#F1C40F,stroke-width:2px
-    style G fill:#EBDEF0,stroke:#8E44AD,stroke-width:2px
-    style H fill:#FDEDEC,stroke:#E74C3C,stroke-width:2px
-
-    style A fill:#D6EAF8,stroke:#3498DB,stroke-width:2px
-    style B fill:#D5F5E3,stroke:#2ECC71,stroke-width:2px
-    style F fill:#FCF3CF,stroke:#F1C40F,stroke-width:2px
-    style G fill:#EBDEF0,stroke:#8E44AD,stroke-width:2px
-    style H fill:#FDEDEC,stroke:#E74C3C,stroke-width:2px
-
+    %% --- Updated Styles for Better Visibility ---
+    style A fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff
+    style B fill:#2ecc71,stroke:#27ae60,stroke-width:2px,color:#fff
+    style F fill:#f1c40f,stroke:#f39c12,stroke-width:2px,color:#fff
+    style G fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff
+    style H fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff
