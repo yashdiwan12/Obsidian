@@ -27,8 +27,8 @@ Prerequisites
 
 Installation
 1. Clone the repository
-   git clone https://github.com/your-username/obsidian-ai-security.git
-   cd obsidian-ai-security
+   git clone https://github.com/yashdiwan12/Obsidian
+   cd Obsidian
 
 2. Set up a virtual environment
    python -m venv venv
