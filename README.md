@@ -121,19 +121,19 @@ We welcome contributions! Please feel free to submit pull requests, open issues,
 ```mermaid
 graph TD
     subgraph "User's Browser"
-        A[🌐 Frontend <br>(HTML, CSS, JS)]
+        A["🌐 Frontend <br>(HTML, CSS, JS)"]
     end
 
     subgraph "Backend Server (Python/Flask)"
-        B[🐍 Flask App <br>(app.py)]
+        B["🐍 Flask App <br>(app.py)"]
         C{API Endpoints}
         D[Phishing Analyzer]
-        E[Threat Query <br>(RAG Chain)]
+        E["Threat Query <br>(RAG Chain)"]
     end
 
     subgraph "Data & AI Layer"
         F[🧠 Google Gemini API]
-        G[💾 ChromaDB <br>(Vector Store)]
+        G["💾 ChromaDB <br>(Vector Store)"]
     end
 
     subgraph "Setup Process (Offline)"
@@ -150,6 +150,12 @@ graph TD
     E -- Uses Context in Prompt --> F
     F -- AI Response --> B
     B -- JSON Response --> A
+
+    style A fill:#D6EAF8,stroke:#3498DB,stroke-width:2px
+    style B fill:#D5F5E3,stroke:#2ECC71,stroke-width:2px
+    style F fill:#FCF3CF,stroke:#F1C40F,stroke-width:2px
+    style G fill:#EBDEF0,stroke:#8E44AD,stroke-width:2px
+    style H fill:#FDEDEC,stroke:#E74C3C,stroke-width:2px
 
     style A fill:#D6EAF8,stroke:#3498DB,stroke-width:2px
     style B fill:#D5F5E3,stroke:#2ECC71,stroke-width:2px
